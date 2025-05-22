@@ -15,7 +15,7 @@ module.exports = {
     {
       name: "frontend",
       script: "serve",
-      args: ["-s", "build", "-l", "3001"],
+      args: ["-s", "build", "-p", "3001"],
       cwd: "./frontend",
       autorestart: true
     },
@@ -29,7 +29,7 @@ module.exports = {
       ref: DEPLOY_REF,
       repo: REPO_URL,
       path: DEPLOY_PATH,
-      'pre-setup': `scp -P 19 ./backend/.env.production ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}/current/backend`,
+      'pre-setup': `scp -P ${DEPLOY_PORT} ./backend/.env.production ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}/current/backend`,
       'post-deploy': `cd ${DEPLOY_PATH}/current && DEPLOY_PATH=${DEPLOY_PATH} ./deploy.sh`
     },
   },
