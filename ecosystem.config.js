@@ -15,7 +15,7 @@ module.exports = {
     {
       name: "frontend",
       script: "serve",
-      args: ["-s", "build", "-p", "3001"],
+      args: "-l 3001 -s build",
       cwd: "./frontend",
       autorestart: true
     },
