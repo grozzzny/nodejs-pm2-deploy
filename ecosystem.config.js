@@ -14,7 +14,7 @@ module.exports = {
     },
     {
       name: "frontend",
-      script: "npx serve -l 3001 -s build",
+      script: "serve -s build -l 3001",
       cwd: "./frontend",
       autorestart: true
     },
