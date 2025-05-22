@@ -32,7 +32,7 @@ module.exports = {
       'pre-setup': `scp -P 19 ./backend/.env.deploy ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}/current/backend`,
       // 'pre-deploy': `whoami`,
       // 'pre-deploy': `scp -P 19 ./backend/.env.deploy ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}/current/backend`,
-      'post-deploy': `cd ${DEPLOY_PATH}/current && DEPLOY_PATH=${DEPLOY_PATH} ./deploy.sh && pm2 startOrRestart "${DEPLOY_PATH}/current/ecosystem.config.js" --env production && pm2 save`
+      'post-deploy': `cd ${DEPLOY_PATH}/current && DEPLOY_PATH=${DEPLOY_PATH} ./deploy.sh && pm2 startOrRestart`
     },
   },
 };
