@@ -9,3 +9,8 @@
 - http://localhost:3000/crash-test
 - http://79.132.138.8:3000/crash-test
 - https://api.pm2.grozzzny.host/crash-test
+
+# Deploy:
+```
+pm2 deploy ecosystem.config.js production
+```
