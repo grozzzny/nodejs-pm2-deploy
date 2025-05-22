@@ -5,12 +5,18 @@
 - https://api.pm2.grozzzny.host (79.132.138.8:3000) - бекенд
 - https://pm2.grozzzny.host (79.132.138.8:3001) - фронтенд
 
-# Crash test:
+# Креш тест:
 - http://localhost:3000/crash-test
 - http://79.132.138.8:3000/crash-test
 - https://api.pm2.grozzzny.host/crash-test
 
-# Deploy:
+# Деплой:
+Перед деплоем необходимо добавить файл "backend/.env.production"
+```
+NODE_ENV=production
+JWT_SECRET=1234
+DB_ADDRESS=mongodb://localhost:27017/mestodb
+```
 ```
 pm2 deploy ecosystem.config.js production
 ```
