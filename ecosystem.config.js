@@ -7,20 +7,19 @@ const {
 module.exports = {
   apps: [
     {
-      name: "backend",
+      name: "back",
       script: "dist/app.js",
       cwd: "./backend",
       autorestart: true
     },
     {
-      name: "frontend",
+      name: "front",
       script: "serve",
       args: "-s build -l 3001",
       cwd: "./frontend",
       autorestart: true
     },
   ],
-
   deploy: {
     production: {
       user: DEPLOY_USER,
