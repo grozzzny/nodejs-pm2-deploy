@@ -12,7 +12,7 @@ yarn install --production
 yarn build
 
 echo "Pm2"
-pm2 startOrRestart "${DEPLOY_PATH}/current/ecosystem.config.js" --env production
-pm2 save
+npx pm2 startOrRestart "${DEPLOY_PATH}/current/ecosystem.config.js" --env production
+npx pm2 save
 
 echo "Completed"
