@@ -6,7 +6,6 @@
 - https://pm2.grozzzny.host (79.132.138.8:3001) - фронтенд
 
 # Креш тест:
-- http://localhost:3000/crash-test
 - http://79.132.138.8:3000/crash-test
 - https://api.pm2.grozzzny.host/crash-test
 
