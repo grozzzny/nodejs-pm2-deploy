@@ -29,8 +29,8 @@ module.exports = {
       ref: DEPLOY_REF,
       repo: REPO_URL,
       path: DEPLOY_PATH,
-      'pre-setup': `scp -P 19 ./backend/.env.deploy ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}/current/backend/.env`,
-      'post-deploy': `cd ${DEPLOY_PATH}/current && DEPLOY_PATH=${DEPLOY_PATH} ./deploy.sh && npm install dotenv && pm2 startOrRestart ecosystem.config.js`
+      'pre-setup': `scp -P 19 ./backend/.env.production ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}/current/backend`,
+      'post-deploy': `cd ${DEPLOY_PATH}/current && DEPLOY_PATH=${DEPLOY_PATH} ./deploy.sh`
     },
   },
 };
