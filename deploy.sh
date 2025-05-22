@@ -3,7 +3,7 @@ set -e
 
 echo "Backend"
 cd "${DEPLOY_PATH}/current/backend"
-yarn install --production
+yarn install
 yarn build
 
 echo "Frontend"
