@@ -13,6 +13,7 @@ yarn build
 
 echo "Pm2:"
 npm install dotenv
+npm install serve
 pm2 startOrRestart "${DEPLOY_PATH}/current/ecosystem.config.js" --env production
 pm2 save
 
