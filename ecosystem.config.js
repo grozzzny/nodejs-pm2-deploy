@@ -29,10 +29,10 @@ module.exports = {
       ref: DEPLOY_REF,
       repo: REPO_URL,
       path: DEPLOY_PATH,
-      // 'pre-setup': `scp -P 19 ./backend/.env.deploy ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}/current/backend`,
+      'pre-setup': `scp -P 19 ./backend/.env.deploy ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}/current/backend`,
       // 'pre-deploy': `whoami`,
       // 'pre-deploy': `scp -P 19 ./backend/.env.deploy ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}/current/backend`,
-      'post-deploy': `cd ${DEPLOY_PATH}/current && DEPLOY_PATH=${DEPLOY_PATH} ./deploy.sh && pm2 startOrRestart`
+      'post-deploy': `cd ${DEPLOY_PATH}/current && DEPLOY_PATH=${DEPLOY_PATH} ./deploy.sh`
     },
   },
 };
