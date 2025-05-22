@@ -15,7 +15,7 @@ module.exports = {
     {
       name: "frontend",
       script: "npx",
-      args: ["serve", "-s", "build", "-l", "3001"],
+      args: "serve -s build -l 3001",
       cwd: "./frontend",
       autorestart: true
     },
@@ -29,10 +29,7 @@ module.exports = {
       ref: DEPLOY_REF,
       repo: REPO_URL,
       path: DEPLOY_PATH,
-      // pre-deploy
-      // pre-deploy-local
-      // pre-setup
-      'pre-deploy-local': `scp -P ${DEPLOY_PORT} ./backend/.env.production ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}/current/backend`,
+      'pre-deploy-local': `scp -P ${DEPLOY_PORT} ./backend/.env.production ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}/current/backend/.env`,
       'post-deploy': `cd ${DEPLOY_PATH}/current && DEPLOY_PATH=${DEPLOY_PATH} ./deploy.sh`
     },
   },
