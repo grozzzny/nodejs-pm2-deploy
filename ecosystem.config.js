@@ -30,7 +30,9 @@ module.exports = {
       repo: REPO_URL,
       path: DEPLOY_PATH,
       // pre-deploy
-      'pre-setup': `scp -P ${DEPLOY_PORT} ./backend/.env.production ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}/current/backend`,
+      // pre-deploy-local
+      // pre-setup
+      'pre-deploy-local': `scp -P ${DEPLOY_PORT} ./backend/.env.production ${DEPLOY_USER}@${DEPLOY_HOST}:${DEPLOY_PATH}/current/backend`,
       'post-deploy': `cd ${DEPLOY_PATH}/current && DEPLOY_PATH=${DEPLOY_PATH} ./deploy.sh`
     },
   },
