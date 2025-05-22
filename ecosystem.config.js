@@ -9,15 +9,16 @@ module.exports = {
     {
       name: "back",
       script: "dist/app.js",
-      cwd: "./backend",
+      cwd: `./backend`,
       autorestart: true
     },
     {
       name: "front",
       script: "serve",
-      args: "-s build -l 3001",
-      cwd: "../frontend",
-      autorestart: true
+      env: {
+        PM2_SERVE_PATH: "frontend/build",
+        PM2_SERVE_PORT: 3001
+      }
     },
   ],
   deploy: {
